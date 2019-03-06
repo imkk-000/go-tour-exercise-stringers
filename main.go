@@ -2,21 +2,13 @@ package main
 
 import (
 	"fmt"
-	"strconv"
 )
 
 type IPAddr [4]byte
 
 // TODO: Add a "String() string" method to IPAddr.
 func (ipAddr IPAddr) String() string {
-	var ipString string
-	for index, ipElement := range ipAddr {
-		ipString += strconv.Itoa(int(ipElement))
-		if index < 3 {
-			ipString += "."
-		}
-	}
-	return ipString
+	return fmt.Sprintf("%d.%d.%d.%d", ipAddr[0], ipAddr[1], ipAddr[2], ipAddr[3])
 }
 
 func main() {
